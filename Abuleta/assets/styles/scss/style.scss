@@ -1,0 +1,30 @@
+/*----------      HEADER     ----------*/
+
+@use 'components/header';
+
+/*----------  END OF HEADER  ----------*/
+
+
+
+
+/*----------      MAIN     ----------*/
+
+@use 'components/home';
+@use 'components/main';
+@use 'components/service';
+@use 'components/subservice';
+@use 'components/subCRUD';
+@use 'components/aboutus';
+@use 'components/loginRegis';
+
+/*----------  END OF MAIN  ----------*/
+
+
+
+
+
+/*----------     FOOTER      ----------*/
+
+@use 'components/footer';
+
+/*----------  END OF FOOTER  ----------*/

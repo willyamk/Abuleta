@@ -1,0 +1,98 @@
+/*----------  USE MIXIN  ----------*/
+@use '../packages/mixin' as mixin;
+
+/*----------  IMPORT VARIABLES  ----------*/
+@import '../packages/variables';
+
+.CRUD {
+    @include mixin.flex();
+    min-height: 50vh;
+
+    article {
+        background: radial-gradient(circle 1224px at 10.6% 8.8%, #f8f8f8 0%, #d0d6d1 100.2%);
+        border: 3px solid #363636;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 1px #656565;
+        width: 80vw;
+        height: 140vh;
+        overflow: hidden;
+
+        .judulCRUD {
+            cursor: pointer;
+            font-family: Freehand521 BT;
+            font-size: 3.4em;
+            color: #047357;
+            text-align: center;
+        }
+
+        form {
+            @include mixin.flex(center, row);
+            height: 145vh;
+            flex-wrap: wrap;
+
+            .tabelCRUD {
+                @include mixin.flex(space-evenly, row);
+                margin: 50px;
+                margin-bottom: 60vh;
+
+                .subCRUD {
+                    border: none;
+                }
+
+                th,
+                td {
+                    @include mixin.flex(left, column);
+                    padding: 6px;
+                }
+
+                th {
+                    font-size: 13pt;
+                    font-weight: 600;
+                    text-align: left;
+                    display: block;
+                    margin-top: 15px;
+                }
+
+                input {
+                    width: 30vw;
+                    height: 6vh;
+                    caret-color: red;
+                    padding-left: 10px;
+                    font-size: 12pt;
+                    border-radius: 5px;
+                }
+            }
+
+            .buttonCRUD {
+                position: absolute;
+                border: none;
+                margin-top: 60vh;
+
+                button {
+                    margin: 15px;
+                }
+
+                .simpan {
+                    @include mixin.subCRUD();
+                    background: map-get($btn, "add");
+                    color: black;
+
+                    &:hover {
+                        background: map-get($btn-hover, "add");
+                    }
+                }
+
+                .batal {
+                    @include mixin.subCRUD();
+                    background: map-get($btn, "kembali");
+                    color: white;
+
+                    &:hover {
+                        background: map-get($btn-hover, "kembali");
+                    }
+                }
+
+            }
+        }
+    }
+}

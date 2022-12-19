@@ -1,0 +1,63 @@
+/*----------  USE MIXIN  ----------*/
+@use '../packages/mixin' as mixin;
+
+/*----------  IMPORT VARIABLES  ----------*/
+@import '../packages/variables';
+
+
+.home {
+    .title {
+        position: absolute;
+        top: 23%;
+        left: 8%;
+        width: 35vw;
+        letter-spacing: 1.5px;
+
+        h1 {
+            background: map-get($home, "first-colour");
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px map-get($home, 'second-colour');
+        }
+
+        h2 {
+            color: #c29810;
+            font-family: Monotype Corsiva;
+            font-size: 2.2em;
+        }
+
+        h3 {
+            text-align: justify;
+            background: $text-colour;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.8rem;
+        }
+
+        button {
+            @include mixin.homeBtn();
+            background: map-get($home, "third-colour");
+            margin-top: 2em;
+            font-weight: 600;
+            color: black;
+
+            &:hover {
+                background: map-get($home, 'forth-colour');
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 20%;
+        left: 52%;
+        z-index: -1;
+        height: 80%;
+        width: 42%;
+        filter: contrast(115%) saturate(1.2) hue-rotate(25deg) sepia(10%) drop-shadow(5px 7px 8px #2c465b);
+    }
+}

@@ -1,0 +1,174 @@
+/*----------  USE MIXIN  ----------*/
+@use '../packages/mixin' as mixin;
+
+/*----------  IMPORT VARIABLES  ----------*/
+@import '../packages/variables';
+
+.subServiveJudul {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.3em;
+    letter-spacing: 1px;
+    font-family: MV Boli;
+}
+
+form {
+    @include mixin.flex(space-between, row);
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .btn-nav {
+
+        button[name="tambah"] {
+            background: map-get($btn, "add");
+            width: 10vw;
+            height: 6vh;
+            border: none;
+            border-radius: 100px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 4px #a8a8a8;
+            cursor: pointer;
+
+            &:hover {
+                background: map-get($btn-hover, "add");
+            }
+        }
+
+        button[name="kembali"] {
+            margin-left: 15px;
+            background: map-get($btn, "kembali");
+            width: 10vw;
+            height: 6vh;
+            border: none;
+            border-radius: 100px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 4px #a8a8a8;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background: map-get($btn-hover, "kembali");
+            }
+        }
+    }
+
+    .filter {
+        @include mixin.flex();
+
+        input[type="text"] {
+            background-color: azure;
+            width: 25vw;
+            height: 6vh;
+            padding-left: 15px;
+            border-radius: 10px;
+            caret-color: red;
+            font-size: 1em;
+            box-shadow: 2px 2px 2px 2px #a8a8a8;
+            margin-right: 12px;
+            cursor: text;
+
+            &::placeholder {
+                color: #626262;
+            }
+        }
+
+        button[name="search"] {
+            background: map-get($btn, "search");
+            border: 1px solid #a8a8a8;
+            border-radius: 100%;
+            height: 55px;
+            width: 55px;
+            box-shadow: 2px 2px 5px #a8a8a8;
+            cursor: pointer;
+
+            span {
+                font-weight: 800;
+            }
+
+            &:hover {
+                background: map-get($btn-hover, "search");
+            }
+        }
+    }
+
+}
+
+table {
+    table-layout: auto;
+    border: 1px ridge rgb(136, 136, 136);
+
+    .sklp {
+        background: linear-gradient(#33c99e, #20c078);
+        text-align: center;
+        font-size: 1.1rem;
+        height: 60px;
+    }
+
+    .skck {
+        background: linear-gradient(#d8d030, #e9b826);
+        text-align: center;
+        font-size: 1.1rem;
+        height: 60px;
+    }
+
+    .skld {
+        background: linear-gradient(#34b5dc, #1d46e8);
+        text-align: center;
+        font-size: 1.1rem;
+        height: 60px;
+    }
+
+    td {
+        height: 60px;
+        font-size: 1.1em;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .no {
+        width: 4vw;
+    }
+
+    .nomor,
+    .tanggal,
+    .waktu {
+        width: 9vw;
+    }
+
+    .jenis {
+        width: 22vw;
+    }
+
+    .aksi {
+        width: 14vw;
+
+        .aksi-ancor {
+            @include mixin.flex();
+
+            a {
+                text-decoration: none;
+                margin: 8px;
+
+                .viewData {
+                    @include mixin.flex(center, row);
+                    @include mixin.button(viewData);
+                }
+
+                .edit {
+                    @include mixin.flex(center, row);
+                    @include mixin.button(edit);
+                }
+
+                .delete {
+                    @include mixin.flex(center, row);
+                    @include mixin.button(delete);
+                }
+            }
+        }
+    }
+}

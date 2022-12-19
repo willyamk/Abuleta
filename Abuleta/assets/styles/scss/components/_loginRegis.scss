@@ -1,0 +1,152 @@
+.loginRegis {
+    background: -webkit-linear-gradient(bottom, #0f9e6a, #1cd176);
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .form-LR {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .4s ease-in;
+
+        fieldset {
+            $form-LR: #f8fcfcf5;
+
+            display: grid;
+            place-items: center;
+            background-color: $form-LR;
+            box-shadow: 1px 2px 8px black;
+            padding: 20px;
+            border: 3px solid #2ec06f;
+            border-radius: 15px;
+            width: 27vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+            h2 {
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+            }
+
+            .underline-title {
+                background: linear-gradient(to right, #0f9e6a, #1cd176);
+                height: 3px;
+                width: 130px;
+            }
+
+            .ul-navigation {
+                margin-top: 20px;
+
+                li {
+                    list-style-type: none;
+                    margin-top: 25px;
+
+                    span {
+                        position: relative;
+                        top: 5px;
+                    }
+
+                    label {
+                        font-size: 1.2em;
+                    }
+
+                    input {
+                        display: block;
+                        background-color: $form-LR;
+                        width: 20vw;
+                        height: 5.5vh;
+                        padding-left: 1rem;
+                        padding-top: 10px;
+                        font-size: 1.2em;
+                        background: $form-LR;
+                        border: none;
+                        outline: none;
+                        caret-color: red;
+                    }
+
+                    .form-border {
+                        background: -webkit-linear-gradient(right, #0f9e6a, #1cd176);
+                        height: 3px;
+                        width: 100%;
+                    }
+
+                    .rememberme {
+                        display: flex;
+                        flex-direction: row;
+                        width: 10rem;
+                        margin-right: 9rem;
+
+                        input[type="checkbox"] {
+                            appearance: none;
+                            -webkit-appearance: none;
+                            background: #d5d5d5;
+                            border-radius: 3px;
+                            width: 1.3rem;
+                            height: 1.3rem;
+                            cursor: pointer;
+                            overflow: hidden;
+
+                            &::after {
+                                content: '\2705';
+                                display: none;
+                                font-weight: 900;
+                                margin-left: -18px;
+                                margin-top: -14px;
+                            }
+
+                            &:hover {
+                                background: #a5a5a5;
+                            }
+
+                            &:checked {
+                                background: -webkit-linear-gradient(#0f9e6a, #1cd176);
+                            }
+
+                            &:checked::after {
+                                display: block;
+                            }
+                        }
+
+                        label[for="remember"] {
+                            margin: 2.5px 0 0 5px;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            .lupa-pass {
+                margin: 0 0 3px 55%;
+                color: #10956b;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            .submit {
+                margin-top: 1.9rem;
+                display: grid;
+                place-items: center;
+                background: -webkit-linear-gradient(right, #556dfa, #2e31c0);
+                box-shadow: 0px 1px 4px #243ac6;
+                color: white;
+                text-transform: uppercase;
+                font-size: .9em;
+                font-weight: 800;
+                width: 10vw;
+                height: 6vh;
+                border: none;
+                border-radius: 5px;
+                transition: .25s;
+                cursor: pointer;
+            }
+
+            .registrasi {
+                color: #10956b;
+                text-decoration: none;
+                font-size: 18px;
+                margin-top: 20px;
+            }
+        }
+    }
+}

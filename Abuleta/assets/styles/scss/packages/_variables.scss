@@ -1,0 +1,37 @@
+$gradient: (
+    "primary-colour": linear-gradient(to top, #e5fefc 0%, #f8f3d9 1%, #e1f6fcf3 100%),
+    "secondary-colour": linear-gradient(36deg, #cb82f9 0%, #E3B3CB 47%, #fae49c 100%),
+    "tersier-colour": linear-gradient(107.5deg, #1bc181 4%, #088d6c 100%),
+);
+
+$home: (
+    "first-colour": linear-gradient(-225deg, #171cab 0%, #3a54be 83%),
+    "second-colour": linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%),
+    "third-colour": linear-gradient(107.5deg, #36dc9a 4%, #21d04d 100%),
+    "forth-colour": linear-gradient(107.5deg, #16a36b 4%, #1b983a 100%)
+);
+
+$btn: (
+    "viewData": linear-gradient(135.9deg, #9d0df0 16.4%, #d513c5 66.1%),
+    "add": linear-gradient(to top, #38c193 0%, #52f9ae 100%),
+    "edit": linear-gradient(to top, #761fd3 0%, #2575fc 100%),
+    "delete": linear-gradient(to right, #f83600 0%, #f9b223 100%),
+    "search": radial-gradient(#dee1e5 0%, #ded3d3 90.1%),
+    "kembali": linear-gradient(to top, #c13838 0%, #f95252 100%)
+);
+
+$btn-hover: (
+    "viewData" : linear-gradient(135.9deg, #7d0bc0 16.4%, #97188c 66.1%),
+    "add": linear-gradient(to top, #208f6a 0%, #35c785 100%),
+    "edit": linear-gradient(to top, #531497 0%, #164eaf 100%),
+    "delete": linear-gradient(to right, #b33816 0%, #a57617 100%),
+    "search": radial-gradient(#c4c8ce 0%, #c6b9b9 90.1%),
+    "kembali": linear-gradient(to top, #8f2020 0%, #c73535 100%)
+);
+
+$aboutUs: (
+    "form": radial-gradient(circle farthest-corner at 10% 20%, rgb(63, 197, 123) 0%, rgb(34, 210, 175) 90%),
+    "info": linear-gradient(36.5deg, rgb(30, 144, 255, .9) 10.4%, rgba(84, 212, 195, 0.6) 87.7%)
+);
+
+$text-colour: #2c465b;

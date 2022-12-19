@@ -1,0 +1,158 @@
+/*----------  USE VARIABLES  ----------*/
+@use '../packages/variables' as variables;
+
+/*----------  USE MIXIN  ----------*/
+@use '../packages/mixin' as mixin;
+
+/*----------  FORWARD MAIN  ----------*/
+@forward 'main';
+
+header {
+    @include mixin.flex(space-between);
+    grid-area: header;
+    height: 15vh;
+    text-transform: uppercase;
+    padding-left: 6vw;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+
+    .icon {
+        @include mixin.flex(left);
+        text-decoration: none;
+
+        img {
+            width: 6%;
+            height: 6%;
+            filter: contrast(120%) hue-rotate(5deg) saturate(110%) sepia(2%) drop-shadow(.8px .8px black);
+        }
+
+        span {
+            margin-left: 10px;
+            color: variables.$text-colour;
+            font-weight: 800;
+        }
+    }
+}
+
+.navigation {
+    @include mixin.flex();
+    margin-right: 5vw;
+
+    .nav {
+        @include mixin.flex();
+        list-style-type: none;
+        padding: 15px;
+        width: 5vw;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-right: 5px;
+
+        a {
+            color: black;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 15px;
+            transition: .2s ease-in-out;
+
+            &:hover {
+                margin-bottom: 5px;
+                color: #098e61;
+                font-weight: 700;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .account {
+        @include mixin.flex();
+        list-style-type: none;
+
+        .action {
+
+            .profile {
+                margin-left: 20px;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: red;
+                }
+            }
+
+            .menu {
+                background: #fbfce9;
+                box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+                border-radius: 15px;
+                box-shadow: 1px 1px 5px black;
+                padding: 10px;
+                position: absolute;
+                top: 120px;
+                right: 54px;
+                width: 17vw;
+                transition: 0.5s;
+                visibility: hidden;
+                opacity: 0;
+
+                &::before {
+                    background: #fbfce9;
+                    content: '';
+                    height: 20px;
+                    position: absolute;
+                    top: -10px;
+                    right: 30px;
+                    transform: rotate(45deg);
+                    width: 20px;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    font-weight: 800;
+                    line-height: 1.3em;
+                    padding-left: 30px;
+                    text-align: left;
+                    width: 100%;
+
+                    div {
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                }
+
+                ul li {
+                    align-items: center;
+                    border-top: 1px solid rgba(0, 0, 0, 0.05);
+                    display: flex;
+                    justify-content: left;
+                    list-style: none;
+                    padding: 10px;
+
+                    a {
+                        display: inline-block;
+                        color: variables.$text-colour;
+                        font-size: 13px;
+                        font-weight: 600;
+                        padding-left: 15px;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        transition: 0.5s;
+
+                        &:hover {
+                            color: #ff0000;
+                            font-size: 15px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .active {
+                opacity: 1;
+                top: 90px;
+                visibility: visible;
+            }
+
+        }
+    }
+}

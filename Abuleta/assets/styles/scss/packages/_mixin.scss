@@ -1,0 +1,160 @@
+/*----------  IMPORT VARIABLES  ----------*/
+@import '../packages/variables';
+
+@mixin flex($justify-content: center, $flex-direction: row) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: center;
+    flex-direction: $flex-direction;
+}
+
+@mixin service($direction) {
+    width: 22.5vw;
+    height: 75vh;
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px #434343;
+
+    img {
+        margin: 15px 5px;
+        width: 60%;
+        filter: contrast(105%) hue-rotate(8deg) drop-shadow(5px 7px 8px #2a2d30);
+    }
+
+    span {
+        font-size: 1.8em;
+        font-weight: 600;
+        line-height: 2.2rem;
+        text-transform: capitalize;
+        letter-spacing: 1.8px;
+        font-family: Monotype Corsiva;
+    }
+
+    button {
+        margin-top: 9%;
+        width: 13vw;
+        height: 7vh;
+        border: none;
+        border-radius: 40px;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        box-shadow: 2px 2px 4px #2c2b2b;
+        cursor: pointer;
+    }
+
+    @if $direction ==lapor {
+        background: linear-gradient(#33c99e, #20c078);
+
+        button {
+            background: linear-gradient(62deg, #e66b24, #b89a14);
+
+            &:hover {
+                background: linear-gradient(62deg, #c15a1f, #997009);
+            }
+        }
+    }
+
+    @else if $direction ==skck {
+        background: linear-gradient(#d8d030, #e9b826);
+
+        button {
+            margin-top: 45px;
+            background: linear-gradient(62deg, #ff4646, #dd3434);
+
+            &:hover {
+                background: linear-gradient(62deg, #e42f2f, #a80d0d);
+            }
+        }
+    }
+
+    @else if $direction ==skld {
+        background: linear-gradient(#33a6c9, #2040c0);
+
+        img {
+            margin-top: 50px;
+            margin-left: 20px;
+        }
+
+        button {
+            margin-top: 40px;
+            background: linear-gradient(62deg, #e1ecef, #dbe0f6);
+
+            &:hover {
+                background: linear-gradient(62deg, #c2d3d7, #b9bed6);
+            }
+        }
+    }
+
+    @else {
+        @error "Unknown direction #{$direction}.";
+    }
+}
+
+@mixin button($direction) {
+    font-size: 1.5em;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #a8a8a8;
+
+    @if $direction ==viewData {
+        background: map-get($btn, "viewData");
+        color: white;
+
+        &:hover {
+            background: map-get($btn-hover, "viewData");
+        }
+    }
+
+    @else if $direction ==edit {
+        background: map-get($btn, "edit");
+        color: white;
+
+        &:hover {
+            background: map-get($btn-hover, "edit");
+        }
+    }
+
+    @else if $direction ==delete {
+        background: map-get($btn, "delete");
+        color: black;
+
+        &:hover {
+            background: map-get($btn-hover, "delete");
+        }
+    }
+
+    @else {
+        @error "Unknown direction #{$direction}.";
+    }
+}
+
+@mixin subCRUD {
+    width: 10vw;
+    height: 6vh;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px rgba(60, 60, 60, .9);
+    cursor: pointer;
+}
+
+@mixin homeBtn() {
+    border: none;
+    height: 6vh;
+    border-radius: 20px;
+    width: 10vw;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px black;
+}

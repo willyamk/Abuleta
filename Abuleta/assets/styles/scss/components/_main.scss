@@ -1,0 +1,45 @@
+/*----------  IMPORT VARIABLES  ----------*/
+@import '../packages/variables';
+
+/*----------  IMPORT INTER FONT  ----------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap');
+
+::-webkit-scrollbar {
+    width: 13px;
+
+    &-track {
+        background: map-get($gradient, "primary-colour");
+    }
+
+    &-thumb {
+        border: 2px solid map-get($gradient, "tersier-colour");
+        background: map-get($gradient, "tersier-colour");
+        border-radius: 20px;
+
+        &:hover {
+            background: map-get($gradient, "tersier-colour");
+        }
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background: map-get($gradient, "primary-colour");
+
+    .container {
+        display: grid;
+        grid-template-areas: "header header" "main main" "footer footer";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+}
+
+main {
+    grid-area: main;
+    min-height: 85vh;
+    padding: 2rem;
+}

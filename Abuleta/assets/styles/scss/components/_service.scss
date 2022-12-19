@@ -1,0 +1,36 @@
+/*----------  USE MIXIN  ----------*/
+@use '../packages/mixin' as mixin;
+
+.wrapper {
+    margin-bottom: 100px;
+
+    .view {
+        font-family: Freehand521 BT;
+        font-size: 3.5em;
+        text-align: center;
+        font-style: italic;
+        text-transform: capitalize;
+    }
+
+    .service {
+        margin-top: 5%;
+        @include mixin.flex(center, row);
+
+        .service1 {
+            margin-right: 5vw;
+            @include mixin.flex(none, column);
+            @include mixin.service(lapor);
+        }
+
+        .service2 {
+            @include mixin.flex(none, column);
+            @include mixin.service(skck);
+        }
+
+        .service3 {
+            margin-left: 5vw;
+            @include mixin.flex(none, column);
+            @include mixin.service(skld);
+        }
+    }
+}

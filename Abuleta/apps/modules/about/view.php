@@ -59,7 +59,7 @@
                     <li><a href="" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="" title="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
                     <li><a href="" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="" title="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://youtu.be/dQw4w9WgXcQ" title="Do not click.. i warned you.." target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -104,10 +104,10 @@
                             <div class="job">Web Developer</div>
                         </div>
                         <div class="media-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/arief.rahmad.9862/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/ariefrahmad9/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCzfVUuC7SGvXRmleZyImujA" target="_blank"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <div class="media-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/monicachpt/" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
@@ -135,16 +135,16 @@
                 <div class="card">
                     <div class="content">
                         <div class="img">
-                            <img src="../Abuleta/assets/img/arbiSyafrihadi.png" alt="20101152630083 - Arbi Syafrihadi" title="20101152630083 - Arbi Syafrihadi">
+                            <img src="../Abuleta/assets/img/arbiSyafrihadi.png" alt="20101152630083 - Arbi Syafri Hadi" title="20101152630083 - Arbi Syafri Hadi">
                         </div>
                         <div class="details">
-                            <div class="name">Arbi Syafrihadi</div>
+                            <div class="name">Arbi Syafri Hadi</div>
                             <div class="job">IT Support</div>
                         </div>
                         <div class="media-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/biefalcon/" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>

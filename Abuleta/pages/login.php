@@ -38,7 +38,10 @@
             if ($password == $row['password']) {
 
                 // Set Session
+
                 $_SESSION["login"] = true;
+                $_SESSION['login'] = $row['username'];
+
                 // Cek Cookie (Remember Me)
                 if (isset($_POST["remember"])) {
     

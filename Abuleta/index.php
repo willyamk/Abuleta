@@ -50,7 +50,11 @@
 
                         <div class="menu">
                             <h3>
-                                Akun Pengguna
+                                <?php 
+                                    if (isset($_SESSION['login'])){
+                                        echo $_SESSION['login'];
+                                    }
+                                ?>
                                 <div>Rekan Abuleta</div>
                             </h3>
                             <ul>
@@ -115,7 +119,7 @@
                     <li><a href="" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="" title="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
                     <li><a href="" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="" title="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://youtu.be/dQw4w9WgXcQ" title="Do not click.. i warned you.." target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                 </ul>
             </div>
             <div class="footer-bottom">

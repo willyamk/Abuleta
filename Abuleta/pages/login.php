@@ -3,7 +3,7 @@
     include "../apps/config/config.php";
 
     // Cek Cookie
-    /* if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
+    if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
         $id = $_COOKIE["id"];
         $key = $_COOKIE["key"];
 
@@ -15,7 +15,7 @@
         if ($key === md5($row['username'])) {
             $_SESSION["login"] = true;
         }
-    } */
+    }
 
     if (isset($_SESSION["login"])) {
         header("Location: ../index.php");
@@ -26,8 +26,6 @@
     if (isset($_POST["login"])) {
         $usernameemail = $_POST['usernameemail'];
         $password = md5($_POST['password']);
-
-        //$passworde = password_hash($password, PASSWORD_DEFAULT);
 
         $tabel = "tb_users";
         $field = "*";
@@ -42,12 +40,12 @@
                 // Set Session
                 $_SESSION["login"] = true;
                 // Cek Cookie (Remember Me)
-                /* if (isset($_POST["remember"])) {
+                if (isset($_POST["remember"])) {
     
                     // Buat Cookie
                     setcookie('id', $row['id'], time() + 60, "/", "localhost", 1);
                     setcookie('key', md5($row['username']), time() + 60, "/", "localhost", 1);
-                } */
+                }
                 echo "<script> document.location.href = '../index.php'</script>";
                 
             } else {
@@ -59,23 +57,8 @@
             echo "<script> 
                 alert('Username atau Email Tidak Terdaftar!'); 
                 </script>";
-        }
-        
-
-        // Cek Username-Email
-        /* if ($query->num_rows === 1) {
-
-            // Cek Password
-            $row = mysqli_fetch_assoc($query);
-            $_SESSION["login"] = $row['username'];
-
-            
-        } else {
-            echo "<script> 
-                alert('Password salah! Silahkan masukkan password yang benar!'); 
-                </script>";
-        }
-        $error = true; */
+        }   
+        $error = true;
     }
 ?>
 

@@ -1,16 +1,43 @@
 <?php
-include '../apps/config/config.php';
+    include '../apps/config/config.php';
 
-if (isset($_POST["registrasi"])) {
-    if (registrasi($_POST) > 0) {
-        echo "<script>
-                alert('Anda Baru Saja Menambahkan Akun Baru!');
-                document.location.href = 'login.php';
-            </script>";
-    } else {
-        echo mysqli_error($conn);
+    if (isset($_POST["registrasi"])) {
+        global $conn;
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+        $confirmpassword = md5($_POST["confirmpassword"]);
+
+        $tabel = "tb_users";
+        $field = "(id, username, email, password)";
+        $field = "*";
+        $value = "('', '$username', '$email', '$password')";
+
+        // Cek Username/Email Sudah Ada Atau Belum
+        $result = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username' OR email = '$email'");
+
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script> alert('Username atau Email Sudah Ada! Silahkan Coba Yang Lain'); </script>";
+            return false;
+        } else {
+            // Cek Konfirmasi Password
+            if ($password == $confirmpassword) {
+                // Tambahkan Data Baru Ke Dalam Database
+                $simpan = insert($tabel, $field, $value);
+
+                if ($simpan) {
+                    echo "<script>
+                        alert('Anda Baru Saja Menambahkan Akun Baru!');
+                        document.location.href = 'login.php';
+                        </script>";
+                }
+
+            } else {
+                echo "<script> alert('Password tidak cocok! Silahkan masukkan yang benar'); </script>";
+            }
+        }
+        return mysqli_affected_rows($conn);
     }
-}
 ?>
 
 <!DOCTYPE html>

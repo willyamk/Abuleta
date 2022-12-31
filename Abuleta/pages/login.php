@@ -2,19 +2,8 @@
     session_start();
     include "../apps/config/config.php";
 
-    // Cek Cookie
-    if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
-        $id = $_COOKIE["id"];
-        $key = $_COOKIE["key"];
-
-        // Ambil Data Username - Email Berdasarkan Id
-        $result = mysqli_query($conn, "SELECT username OR email FROM tb_users WHERE id = $id");
-        $row = mysqli_fetch_assoc($result);
-
-        // Cek Cookie Username - Email
-        if ($key === md5($row['username'])) {
-            $_SESSION["login"] = true;
-        }
+    if (isset($_COOKIE['user_login'])) {
+        $_SESSION['login'] = true;
     }
 
     if (isset($_SESSION["login"])) {
@@ -30,7 +19,7 @@
         $tabel = "tb_users";
         $field = "*";
         $where = "WHERE username = '$usernameemail' OR email = '$usernameemail'";
-        
+
         $query = getRecord($tabel, $field, $where);
         $row = fetch($query);
 
@@ -40,27 +29,35 @@
                 // Set Session
 
                 $_SESSION["login"] = true;
-                $_SESSION['login'] = $row['username'];
+                $_SESSION['login'] = $row['nama'];
 
                 // Cek Cookie (Remember Me)
                 if (isset($_POST["remember"])) {
-    
+
                     // Buat Cookie
-                    setcookie('id', $row['id'], time() + 60, "/", "localhost", 1);
-                    setcookie('key', md5($row['username']), time() + 60, "/", "localhost", 1);
+                    setcookie('user_login', $_POST['username'], time() + 60, "/", "localhost", 1);
+                    setcookie('userpassword', $_POST['password'], time() + 60, "/", "localhost", 1);
+                } else {
+                    if(isset($_COOKIE["user_login"])) {
+                        setcookie ("user_login","");
+                    }
+                    if(isset($_COOKIE["userpassword"])) {
+                        setcookie ("userpassword","");
+                    }
                 }
+
                 echo "<script> document.location.href = '../index.php'</script>";
-                
+
             } else {
-                echo "<script> 
-                alert('Password salah! Silahkan masukkan password yang benar!'); 
+                echo "<script>
+                alert('Password salah! Silahkan masukkan password yang benar!');
                 </script>";
             }
         } else {
-            echo "<script> 
-                alert('Username atau Email Tidak Terdaftar!'); 
+            echo "<script>
+                alert('Username atau Email Tidak Terdaftar!');
                 </script>";
-        }   
+        }
         $error = true;
     }
 ?>

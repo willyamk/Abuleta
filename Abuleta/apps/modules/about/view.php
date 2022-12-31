@@ -48,7 +48,7 @@
                 </div>
                 <div>
                     <span class="material-icons">email</span>
-                    <a href="mailto:abuleta@gmail.com">abuleta@gmail.com</a>
+                    <a href="mailto:admin@abuleta.com">admin@abuleta.com</a>
                 </div>
                 <div>
                     <span class="material-icons">call</span>
@@ -87,7 +87,7 @@
                         <div class="media-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/willy.amk/" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="details">
                             <div class="name">Arbi Syafri Hadi</div>
-                            <div class="job">IT Support</div>
+                            <div class="job">Bantu Doa</div>
                         </div>
                         <div class="media-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>

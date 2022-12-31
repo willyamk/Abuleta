@@ -3,15 +3,16 @@
 
     if (isset($_POST["registrasi"])) {
         global $conn;
+
+        $nama = $_POST["nama"];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = md5($_POST['password']);
         $confirmpassword = md5($_POST["confirmpassword"]);
 
         $tabel = "tb_users";
-        $field = "(id, username, email, password)";
-        $field = "*";
-        $value = "('', '$username', '$email', '$password')";
+        $field = "(id, nama ,username, email, password)";
+        $value = "('', '$nama', '$username', '$email', '$password')";
 
         // Cek Username/Email Sudah Ada Atau Belum
         $result = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username' OR email = '$email'");
@@ -66,6 +67,12 @@
                 <h2>Registrasi</h2>
                 <div class="underline-title"></div>
                 <ul class="ul-navigation">
+                    <li>
+                        <span class="material-icons">person</span>
+                        <label for="username">Nama Lengkap</label>
+                        <input type="text" name="nama" id="nama" required>
+                        <div class="form-border"></div>
+                    </li>
                     <li>
                         <span class="material-icons">person</span>
                         <label for="username">Username</label>

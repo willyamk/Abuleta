@@ -19,10 +19,10 @@
     }
 
     function getRecord($tabel,$field,$where){
-            global $conn;
-            $query = mysqli_query($conn, "SELECT {$field} FROM {$tabel} {$where}");
-            return $query;
-        }
+        global $conn;
+        $query = mysqli_query($conn, "SELECT {$field} FROM {$tabel} {$where}");
+        return $query;
+    }
 
     function insert($tabel, $field, $value){
         global $conn;

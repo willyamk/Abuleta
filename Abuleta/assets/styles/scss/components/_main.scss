@@ -29,7 +29,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: map-get($gradient, "primary-colour");
 
-    .container {
+    .container-fluid {
         display: grid;
         grid-template-areas: "header header" "main main" "footer footer";
         grid-template-columns: 1fr 1fr;

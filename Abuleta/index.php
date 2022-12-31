@@ -28,10 +28,11 @@
     <!-- Font Awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <header>
             <a href="./" class="icon">
                 <img src="assets/img/favicon.png" alt="Cursum" title="cursum">
@@ -50,7 +51,7 @@
 
                         <div class="menu">
                             <h3>
-                                <?php 
+                                <?php
                                     if (isset($_SESSION['login'])){
                                         echo $_SESSION['login'];
                                     }
@@ -72,8 +73,11 @@
                 </li>
             </ul>
         </header>
+
         <main>
             <?php
+            include "apps/config/config.php";
+
             $page = isset($_GET['page']) ? $_GET['page'] : '';
             $act = isset($_GET['act']) ? $_GET['act'] : '';
 
@@ -107,6 +111,7 @@
             }
             ?>
         </main>
+
         <footer>
             <div class="footer-content">
                 <h3>Abuleta</h3>
